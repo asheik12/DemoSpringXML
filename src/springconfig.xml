@@ -7,9 +7,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean id="chic" class="test.spring.xml.ChickenBiriyani"></bean>
+    <bean id="normal" class="test.spring.xml.NormalDelivery"></bean>
+    <bean id="fast" class="test.spring.xml.FastDelivery"></bean>
+     
+    <bean id="chic" class="test.spring.xml.ChickenBiriyani">
+    	<constructor-arg ref="fast"></constructor-arg>
+    </bean>
     
-    <bean id="mutt" class="test.spring.xml.MuttonBiriyani"></bean>
+    <bean id="mutt" class="test.spring.xml.MuttonBiriyani">
+    	<constructor-arg ref="normal"></constructor-arg>
+    </bean>
     
     
 </beans>    
