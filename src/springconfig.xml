@@ -10,6 +10,10 @@
     <bean id="normal" class="test.spring.xml.NormalDelivery"></bean>
     <bean id="fast" class="test.spring.xml.FastDelivery"></bean>
      
+     <bean id="fish" class="test.spring.xml.FishBiriyani">
+     <property name="deliveryService" ref="normal"></property>
+     </bean>
+     
     <bean id="chic" class="test.spring.xml.ChickenBiriyani">
     	<constructor-arg ref="fast"></constructor-arg>
     </bean>
