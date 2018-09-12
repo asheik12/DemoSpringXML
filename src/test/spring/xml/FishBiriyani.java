@@ -10,6 +10,13 @@ public class FishBiriyani implements FoodFactory {
 	public void setDeliveryService(DeliveryService deliveryService) {
 		this.deliveryService = deliveryService;
 	}
+	
+	// Adding default value to ingredients to config file
+	public void setIngredients(boolean ingredients) {
+		this.ingredients = ingredients;
+	}
+
+
 
 	@Override
 	public String getMyDish() {

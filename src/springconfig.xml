@@ -12,6 +12,7 @@
      
      <bean id="fish" class="test.spring.xml.FishBiriyani">
      <property name="deliveryService" ref="normal"></property>
+     <property name="ingredients" value="true"></property>
      </bean>
      
     <bean id="chic" class="test.spring.xml.ChickenBiriyani">
