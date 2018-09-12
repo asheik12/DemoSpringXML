@@ -7,6 +7,10 @@ public class MuttonBiriyani implements FoodFactory {
 
 	private boolean ingredients;
 	
+	
+	public MuttonBiriyani() {
+	}
+
 	@Override
 	public String getMyDish() {
 		if(ingredients) return "Tasty & Yummy Mutton Biriyani Is Very Hot";
@@ -16,6 +20,12 @@ public class MuttonBiriyani implements FoodFactory {
 	@Override
 	public void addMoreIngredients() {
 		ingredients = true;
+	}
+
+	@Override
+	public String deliverMyDish() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
