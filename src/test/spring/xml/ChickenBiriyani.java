@@ -31,4 +31,12 @@ public class ChickenBiriyani implements FoodFactory {
 		return status + " will be " + deliveryService.deliverService();
 	}
 
+	public void myPostConstruct() {
+		System.out.println("This is called inside Post Construct");
+	}
+	
+	public void myPreDestroy() {
+		System.out.println("This is called inside Pre Destroy");
+	}
+	
 }

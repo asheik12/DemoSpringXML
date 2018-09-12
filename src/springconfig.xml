@@ -15,7 +15,7 @@
      <property name="ingredients" value="true"></property>
      </bean>
      
-    <bean id="chic" class="test.spring.xml.ChickenBiriyani">
+    <bean id="chic" class="test.spring.xml.ChickenBiriyani" init-method="myPostConstruct" destroy-method="myPreDestroy">
     	<constructor-arg ref="fast"></constructor-arg>
     </bean>
     
