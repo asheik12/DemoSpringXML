@@ -11,12 +11,12 @@ public class MainIOC {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springconfig.xml");
 		
 		// Getting required bean from the spring container
-		FoodFactory factory = context.getBean("chic", FoodFactory.class);
+		FoodFactory factory = context.getBean("chickenBiriyani", FoodFactory.class);
 		
 		System.out.println(factory.getMyDish());
 		
 		// Getting required bean from the spring container
-		FoodFactory factory1 = context.getBean("mutt", FoodFactory.class);
+		FoodFactory factory1 = context.getBean("mutton", FoodFactory.class);
 
 		System.out.println(factory1.getMyDish());
 

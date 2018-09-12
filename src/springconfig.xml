@@ -6,10 +6,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    
-    <bean id="chic" class="test.spring.xml.ChickenBiriyani"></bean>
-    
-    <bean id="mutt" class="test.spring.xml.MuttonBiriyani"></bean>
-    
+
+	<context:component-scan base-package="test.spring.xml"></context:component-scan>    
     
 </beans>    
