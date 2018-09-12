@@ -19,7 +19,7 @@
     	<constructor-arg ref="fast"></constructor-arg>
     </bean>
     
-    <bean id="mutt" class="test.spring.xml.MuttonBiriyani">
+    <bean id="mutt" class="test.spring.xml.MuttonBiriyani" scope="prototype">
     	<constructor-arg ref="normal"></constructor-arg>
     </bean>
     
