@@ -5,22 +5,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("mutton")
-public class MuttonBiriyani implements FoodFactory {
+@Component("prawn")
+@Scope("prototype")
+public class PrawnBiriyani implements FoodFactory {
 
 	private String status;
 	private boolean ingredients;
 	
-	
+	@Autowired
+	@Qualifier("fastDelivery")
 	private DeliveryService deliveryService;
-	
-	public MuttonBiriyani() {
-	}
 
 	@Override
 	public String getMyDish() {
-		if(ingredients) status = "Tasty & Yummy Mutton Biriyani Is Very Hot";
-		else status = "Your Mutton Biriyani Is Ready To Taste";
+		if(ingredients) status = "Your Hot & Spicy Prawn Biriyani Is Ready";
+		else status = "Your Prawn Biriyani Is Ready";
 		return status;
 	}
 
@@ -31,16 +30,13 @@ public class MuttonBiriyani implements FoodFactory {
 
 	@Override
 	public String deliverMyDish() {
-		// TODO Auto-generated method stub
 		return status + " will be " + deliveryService.deliverService();
 	}
-
-	@Autowired
-	@Qualifier("normalDelivery")
+	
+	
 	public void setDeliveryService(DeliveryService deliveryService) {
 		this.deliveryService = deliveryService;
 	}
+	
 
-	
-	
 }
