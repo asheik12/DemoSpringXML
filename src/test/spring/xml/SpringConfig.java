@@ -8,14 +8,24 @@ import org.springframework.context.annotation.Configuration;
 public class SpringConfig {
 
 	@Bean
+	public DeliveryService setChicDependency() {
+		return new FastDelivery();
+	}
+	
+	@Bean
+	public DeliveryService setMuttDependency() {
+		return new NormalDelivery();
+	}
+	
+	@Bean
 	public FoodFactory getChicDish() {
-		ChickenBiriyani chickenBiriyani = new ChickenBiriyani();
+		ChickenBiriyani chickenBiriyani = new ChickenBiriyani(setChicDependency());
 		return chickenBiriyani;
 	}
 	
 	@Bean
 	public FoodFactory getMuttDish() {
-		MuttonBiriyani muttonBiriyani = new MuttonBiriyani();
+		MuttonBiriyani muttonBiriyani = new MuttonBiriyani(setMuttDependency());
 		return muttonBiriyani;
 	}
 }
