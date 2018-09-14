@@ -1,6 +1,6 @@
 package test.spring.xml;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainIOC {
 
@@ -8,10 +8,10 @@ public class MainIOC {
 		// TODO Auto-generated method stub
 		
 		// Creating spring container (Application Context) which stores the beans (Objects of our classes)
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springconfig.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 		
 		// Getting required bean from the spring container
-		FoodFactory factory = context.getBean("chic", FoodFactory.class);
+		FoodFactory factory = context.getBean("chickenBiriyani", FoodFactory.class);
 		
 		System.out.println(factory.getMyDish());
 		

@@ -1,5 +1,8 @@
 package test.spring.xml;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ChickenBiriyani implements FoodFactory {
 
 	private boolean ingredients;
