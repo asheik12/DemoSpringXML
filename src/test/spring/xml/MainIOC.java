@@ -11,12 +11,12 @@ public class MainIOC {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 		
 		// Getting required bean from the spring container
-		FoodFactory factory = context.getBean("chickenBiriyani", FoodFactory.class);
+		FoodFactory factory = context.getBean("getChicDish", FoodFactory.class);
 		
 		System.out.println(factory.getMyDish());
 		
 		// Getting required bean from the spring container
-		FoodFactory factory1 = context.getBean("mutt", FoodFactory.class);
+		FoodFactory factory1 = context.getBean("getMuttDish", FoodFactory.class);
 
 		System.out.println(factory1.getMyDish());
 
