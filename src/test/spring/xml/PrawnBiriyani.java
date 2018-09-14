@@ -1,5 +1,8 @@
 package test.spring.xml;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -38,5 +41,14 @@ public class PrawnBiriyani implements FoodFactory {
 		this.deliveryService = deliveryService;
 	}
 	
+	@PostConstruct
+	public void initialization() {
+		System.out.println("Method running when postconstruct");
+	}
 
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Method running when destroy");
+	}
+	
 }
