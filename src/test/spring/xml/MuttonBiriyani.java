@@ -1,10 +1,14 @@
 package test.spring.xml;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class MuttonBiriyani implements FoodFactory {
 
+	@Value(value = "${foo.message1}")
+	private String message;
 	private boolean ingredients;
 	private DeliveryService deliveryService;
 	
@@ -32,7 +36,7 @@ public class MuttonBiriyani implements FoodFactory {
 	@Override
 	public String deliverMyDish() {
 		// TODO Auto-generated method stub
-		return "Your dish will be delivered in " + deliveryService.deliverService();
+		return "Your dish which is "+ message +"will be delivered in " + deliveryService.deliverService();
 	}
 
 }

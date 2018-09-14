@@ -14,11 +14,21 @@ public class MainIOC {
 		FoodFactory factory = context.getBean("getChicDish", FoodFactory.class);
 		
 		System.out.println(factory.getMyDish());
+		factory.addMoreIngredients();
+		System.out.println(factory.getMyDish());
+		System.out.println(factory.deliverMyDish());
+		
+		FoodFactory factory2 = context.getBean("getChicDish", FoodFactory.class);
+
+		System.out.println(factory2.getMyDish());
+		System.out.println(factory2.deliverMyDish());
 		
 		// Getting required bean from the spring container
 		FoodFactory factory1 = context.getBean("getMuttDish", FoodFactory.class);
 
 		System.out.println(factory1.getMyDish());
+		factory1.addMoreIngredients();
+		System.out.println(factory1.deliverMyDish());
 
 		context.close();
 		

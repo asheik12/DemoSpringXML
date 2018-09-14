@@ -2,9 +2,12 @@ package test.spring.xml;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 //@ComponentScan("test.spring.xml")
+@PropertySource("classpath:values.properties")
 public class SpringConfig {
 
 	@Bean
@@ -18,6 +21,7 @@ public class SpringConfig {
 	}
 	
 	@Bean
+	@Scope("singleton")
 	public FoodFactory getChicDish() {
 		ChickenBiriyani chickenBiriyani = new ChickenBiriyani(setChicDependency());
 		return chickenBiriyani;
